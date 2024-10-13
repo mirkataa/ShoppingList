@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ShoppingListApp.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/CategoriesCSS/CategoryIndex.css" />
+}
+
+<div class="categories-index">
+    <div class="container">
+        <h1>Categories</h1>
+
+        <div class="create-new">
+            @if (User.IsInRole("Admin"))
+            {
+                <a asp-action="Create">Create New</a>
+            }
+        </div>
+
+        <div class="categories-grid">
+            @foreach (var item in Model)
+            {
+                <div class="category-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>@item.Name</h3>
+                    <div class="actions">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.CategoryId" class="btn-edit">Edit</a>
+                        }
+                        <a asp-action="Details" asp-route-id="@item.CategoryId" class="btn-details">Details</a>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <a asp-action="Delete" asp-route-id="@item.CategoryId" class="btn-delete">Delete</a>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+}
+
+@*
+<h1>Index</h1>
+
+<p>
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="Create">Create New</a>
+    }
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                    <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a>
+                    @if (User.IsInRole("Admin"))
+                 {
+                     <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a>
+                     <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+                 }
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@

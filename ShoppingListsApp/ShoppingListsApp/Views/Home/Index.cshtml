@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@section Styles {
+    <!-- Link to HomePage specific CSS -->
+    <link rel="stylesheet" href="~/css/HomePage.css" />
+}
+@* 
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+ *@
+
+<div class="homepage">
+    <div class="container">
+        <div class="welcome-section">
+            <h1 class="display-4">Welcome to Your Shopping List Manager</h1>
+            <p class="lead">Keep track of your groceries, household essentials, and more with ease!</p>
+        </div>
+
+        <div class="features-section">
+            <h2>Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-list-alt"></i>
+                    <h3>Create Lists</h3>
+                    <p>Organize your shopping items into different lists.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Track Progress</h3>
+                    <p>Mark items as acquired and keep your list up-to-date.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-trash-alt"></i>
+                    <h3>Easy Management</h3>
+                    <p>Add, edit, or delete items from your lists with a click.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="get-started-section">
+            <a href="/ShoppingLists" class="btn btn-primary btn-lg">Get Started</a>
+        </div>
+    </div>
+</div>

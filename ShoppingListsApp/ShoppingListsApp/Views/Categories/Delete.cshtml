@@ -1,0 +1,59 @@
+﻿@model ShoppingListApp.Models.Category
+
+@{
+    ViewData["Title"] = "Delete";
+}
+@section Styles {
+    <!-- Link to HomePage specific CSS -->
+    <link rel="stylesheet" href="~/css/CategoriesCSS/CategoryDelete.css" />
+}
+
+<div class="delete-container">
+    <h1>Delete Category</h1>
+
+    <div class="warning-section">
+        <p class="warning-text">Are you sure you want to delete this category?</p>
+        <p class="sub-warning-text">By deleting this category, you will remove all products in it, and these products will also be removed from any existing shopping lists!</p>
+    </div>
+
+    <div class="category-details">
+        <h4>Category Name</h4>
+        <div class="category-name">@Html.DisplayFor(model => model.Name)</div>
+        <hr />
+       
+    </div>
+    
+    <div class="action-buttons">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="CategoryId" />
+            <input type="submit" value="Delete" class="btn btn-danger btn-delete" />
+            <span class="trash-icon">
+                <svg class="trash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g class="trash-lid">
+                        <rect x="5" y="3" width="14" height="2" rx="1" ry="1" fill="#e74c3c" />
+                        <path d="M6 5h12v1H6z" fill="#e74c3c" />
+                    </g>
+                    <g class="trash-body">
+                        <rect x="7" y="6" width="10" height="14" rx="2" ry="2" fill="#ecf0f1" />
+                        <rect x="8" y="6" width="8" height="12" rx="1.5" ry="1.5" fill="#bdc3c7" />
+                        <path d="M9 10h1v6H9zm5 0h1v6h-1z" fill="#7f8c8d" />
+                    </g>
+                    <g class="trash-handle">
+                        <path d="M8 3h8v1H8z" fill="#e74c3c" />
+                    </g>
+                </svg>
+            </span>
+            <a asp-action="Index" class="btn btn-secondary btn-cancel">Back to List</a>
+        </form>
+    </div>
+</div>
+
+@*  <dl class="row">
+            <dt class = "col-sm-2">
+               @*  @Html.DisplayNameFor(model => model.Name)
+                    Category Name:
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+        </dl> *@

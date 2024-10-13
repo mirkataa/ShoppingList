@@ -1,0 +1,22 @@
+services:
+  shoppinglistsapp:
+    image: ${DOCKER_REGISTRY-}shoppinglistsapp
+    container_name: ShopppingListCont
+    build:
+      context: .
+      dockerfile: ShoppingListsApp/Dockerfile
+    ports:
+       - "10024:10024"  
+       - "10025:10025"
+
+  shoplistdb:
+    image: postgres:16 
+    container_name: ShopDbCont
+    environment: 
+        - POSTGRES_DB=ShoppingListDatabase
+        - POSTGRES_USER=person
+        - POSTGRES_PASSWORD=azsxdc
+    volumes: 
+        - ./containers/products:/var/lib/postgresql/data
+    ports: 
+        - 5432:5432

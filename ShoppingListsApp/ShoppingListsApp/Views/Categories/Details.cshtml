@@ -1,0 +1,102 @@
+﻿@model ShoppingListApp.Models.Category
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/CategoriesCSS/CategoryDetails.css" />
+}
+
+<div class="category-details">
+    <div class="container">
+        @* <h1>Details</h1> *@
+
+        <div class="category-info">
+            <h1>Category Information</h1> 
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-sm-10 cat-name">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+            </dl>
+            <div>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-action="Edit" asp-route-id="@Model?.CategoryId" class="edit-link">Edit</a>
+                }
+                <a asp-action="Index" class="back-link">Back to List</a>
+            </div>
+        </div>
+
+        <div class="product-list">
+            <h4>Products in this Category</h4>
+            <ul>
+                @if (Model.Products != null && Model.Products.Any())
+                {
+                    foreach (var product in Model.Products)
+                    {
+                        <li>
+                            <i class="fas fa-box"></i>
+                            @Html.DisplayFor(modelItem => product.Name)
+                            @* <i class="fas fa-check-circle"></i> *@
+                        </li>
+                    }
+                }
+                else
+                {
+                    <li class="no-products">No products in this category.</li>
+                }
+            </ul>
+        </div>
+
+       
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+}
+
+@* <h1>Details</h1>
+
+<div>
+    <h4>Category</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Products in this Category</h4>
+    <ul>
+        @if (Model.Products != null && Model.Products.Any())
+        {
+            foreach (var product in Model.Products)
+            {
+                <li>@Html.DisplayFor(modelItem => product.Name)</li>
+            }
+        }
+        else
+        {
+            <li>No products in this category.</li>
+        }
+    </ul>
+</div>
+
+<div>
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="Edit" asp-route-id="@Model?.CategoryId">Edit</a>
+    }
+    <a asp-action="Index">Back to List</a>
+</div> *@

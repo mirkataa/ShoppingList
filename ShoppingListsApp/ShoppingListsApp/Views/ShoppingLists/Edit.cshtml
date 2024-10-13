@@ -1,0 +1,236 @@
+﻿@model ShoppingListApp.Models.ShoppingListModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/ShoppingListsCSS/ShoppingListEdit.css" />
+}
+
+
+<div class="edit-shopping-list-container">
+    <h1>Edit Shopping List</h1>
+    <hr />
+
+    <div class="form-section">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ShoppingListId" />
+            <div class="form-group" style="display:none;">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="animated-input" placeholder="Enter list name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Current Shopping List Items</label>
+                <ul id="shoppingListItems" class="product-list">
+                    @foreach (var item in Model.Items)
+                    {
+                        <li>
+                            @{
+                                var displayItem = item.StartsWith("__ACQUIRED__") ? item.Replace("__ACQUIRED__", "") : item;
+                                var isAcquired = item.StartsWith("__ACQUIRED__");
+                            }
+                            @if (isAcquired)
+                            {
+                                <span class="checkmark">&#10003;</span> 
+                            }
+                            @displayItem
+                            <button type="button" class="btn btn-danger btn-sm" onclick="deleteItem('@Model.ShoppingListId', '@item')">X</button>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <!-- Add New Items from Categories -->
+            <div class="form-group">
+                <label>Select Products to Add</label>
+                <div id="categories">
+                    @if (ViewBag.Categories == null)
+                    {
+                        <h5>No available categories</h5>
+                    }
+                    else{
+                    @foreach (var category in ViewBag.Categories) 
+                    {
+                        <div class="category-title" >
+                            <h5 class="category-title" onclick="toggleProducts('@category.CategoryId')">@category.Name
+                            <span class="toggle-arrow">&#x25BC;</span></h5>
+                        </div>
+                        <ul id="products-@category.CategoryId" class="product-list" style="display: none;">
+                             @if (category.Products.Count == 0)
+                            {
+                                <li>No products in this category</li>
+                            }
+                            else
+                            { 
+                                @foreach (var product in category.Products)
+                                {
+                                    var productName = product.Name;
+                                    var isInList = Model.Items.Any(i => i == productName || i == $"__ACQUIRED__{productName}");
+                                    if (!isInList)
+                                    {
+                                        <li>
+                                            <input type="checkbox" onchange="addItem('@Model.ShoppingListId', '@product.Name')" />
+                                            @product.Name
+                                        </li>
+                                    }
+                                }
+                            }
+                        </ul>
+                    }
+                    }
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-create">Save</button>
+        </form>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn btn-back">Back to List</a>
+    </div>
+
+</div>
+
+@* <h1>Edit</h1>
+
+<h4>ShoppingListModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ShoppingListId" />
+            <div class="form-group" style="display:none;">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+           @*  <div class="form-group">
+                <label asp-for="Items" class="control-label"></label>
+                <input asp-for="Items" class="form-control" />
+                <span asp-validation-for="Items" class="text-danger"></span>
+            </div> 
+            <div class="form-group">
+                <label>Current Shopping List Items</label>
+                <ul id="shoppingListItems">
+                    @foreach (var item in Model.Items)
+                    {
+                        <li>
+                            @{
+                                var displayItem = item.StartsWith("__ACQUIRED__") ? item.Replace("__ACQUIRED__", "") : item;
+                            }
+                            @displayItem
+                            <button type="button" class="btn btn-danger btn-sm" onclick="deleteItem('@Model.ShoppingListId', '@item')">X</button>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <!-- Add New Items from Categories -->
+            <div class="form-group">
+                <label>Select Products to Add</label>
+                <div id="categories">
+                    @foreach (var category in ViewBag.Categories)
+                    {
+                        <h5>@category.Name</h5>
+                        <ul>
+                            @foreach (var product in category.Products)
+                            {
+                                var productName = product.Name;
+                                // Check if the product is already in the shopping list (with or without __ACQUIRED__)
+                                var isInList = Model.Items.Any(i => i == productName || i == $"__ACQUIRED__{productName}");
+
+                                if (!isInList)
+                                {
+                                    <li>
+                                        <input type="checkbox" onchange="addItem('@Model.ShoppingListId', '@product.Name')" />
+                                        @product.Name
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    }
+                </div>
+            </div>
+            @* <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div> 
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+ *@
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        function addItem(shoppingListId, itemName) {
+            $.ajax({
+                url: '/ShoppingLists/AddItem',
+                type: 'POST',
+                data: {
+                    id: shoppingListId,
+                    item: itemName
+                },
+                headers: {
+                    'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                },
+                success: function() {
+                    location.reload();  // Reload the page to update the list and hide the added product
+                },
+                error: function() {
+                    console.error('Error adding item.');
+                }
+            });
+        }
+
+        function deleteItem(shoppingListId, itemName) {
+            $.ajax({
+                url: '/ShoppingLists/DeleteItemEdit',
+                type: 'POST',
+                data: {
+                    id: shoppingListId,
+                    item: itemName
+                },
+                headers: {
+                    'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                },
+                success: function() {
+                    location.reload();  // Reload the page to show the removed product under categories
+                },
+                error: function() {
+                    console.error('Error deleting item.');
+                }
+            });
+        }
+
+        function toggleProducts(categoryId) {
+            const productList = document.getElementById(`products-${categoryId}`);
+            const categoryTitle = event.currentTarget;
+            productList.style.display = productList.style.display === 'none' ? 'block' : 'none';
+            categoryTitle.classList.toggle('expanded');
+    }
+    </script>
+}

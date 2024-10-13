@@ -1,0 +1,206 @@
+﻿/* General Layout */
+.product-edit {
+    background-color: #f4f8fc; 
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    padding: 3rem 2rem; 
+    max-width: 600px; 
+    margin: 50px auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); 
+    animation: fadeIn 0.5s ease-in-out; 
+}
+
+/* Title */
+h1 {
+    font-size: 2.5rem; 
+    text-align: center; 
+    color: #2c3e50; 
+    margin-bottom: 1.5rem; 
+    font-weight: bold;
+    letter-spacing: 1px; 
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: slideInFromTop 0.5s ease-in-out;
+}
+
+/* Subtitle */
+h4 {
+    font-weight: bold;
+    font-size: 1.5rem; 
+    text-align: center; 
+    color: #34495e; 
+    margin-bottom: 1.5rem; 
+}
+
+/* Form Information */
+.product-info {
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    padding: 2rem; 
+    margin-bottom: 2rem;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+    /* Labels */
+    .form-group label {
+        font-weight: bold; 
+        font-size: 1.1rem; 
+        color: #2c3e50;
+    }
+
+/* Input Fields */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #bdc3c7; 
+    padding: 12px; 
+    transition: border-color 0.3s, box-shadow 0.3s; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+    .form-control:focus {
+        border-color: #3498db; 
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); 
+    }
+
+/* Save Button */
+.btn-save {
+    background: linear-gradient(135deg, #3498db, #2ecc71); 
+    font-weight: bold; 
+    color: white; 
+    padding: 12px 20px; 
+    border: none; 
+    border-radius: 50px; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background 0.4s, transform 0.3s, box-shadow 0.3s; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    display: block; 
+    margin: auto;
+}
+
+    .btn-save:hover {
+        background: linear-gradient(135deg, #2ecc71, #3498db); 
+        transform: translateY(-2px); 
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+    }
+
+/* Back Link */
+.back-link {
+    display: inline-block; 
+    margin-top: 2rem;
+    padding: 10px 20px; 
+    border-radius: 50px; 
+    background-color: #3498db; 
+    color: white; 
+    text-decoration: none; 
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    font-weight: bold; 
+    margin: auto;
+}
+
+    .back-link:hover {
+        background-color: #2980b9;
+        color: white; 
+        transform: translateY(-2px); 
+    }
+
+/* Media Queries */
+
+/* Screen width 1920px */
+@media (min-width: 1920px) {
+    h1 {
+        font-size: 3rem; 
+    }
+
+    .product-edit {
+        max-width: 800px; 
+    }
+}
+
+/* Screen width 1366px to 1536px */
+@media (min-width: 1366px) and (max-width: 1536px) {
+    .product-edit {
+        max-width: 700px; 
+    }
+}
+
+/* Screen width 1280px to 1366px */
+@media (min-width: 1280px) and (max-width: 1366px) {
+    .product-edit {
+        max-width: 600px; 
+    }
+}
+
+/* Screen width 412px to 393px */
+@media (max-width: 412px) {
+    h1 {
+        font-size: 1.8rem; 
+    }
+
+    .btn-save {
+        padding: 8px 12px;
+        font-size: 0.9rem; 
+    }
+}
+
+/* Screen width 360px to 390px */
+@media (max-width: 390px) {
+    h1 {
+        font-size: 1.5rem; 
+    }
+
+    .btn-save {
+        padding: 8px 10px; 
+        font-size: 0.85rem; 
+    }
+
+    .back-link {
+        font-size: 0.85rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0; 
+    }
+
+    to {
+        opacity: 1; 
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0; 
+        transform: translateY(-50px); 
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0; 
+        transform: translateY(50px); 
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,248 @@
+﻿/* Delete Confirmation Page */
+.delete-container {
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: 'Poppins', sans-serif; 
+    padding: 2rem 1rem; 
+    max-width: 600px; 
+    margin: 0 auto; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+    /* Heading */
+    .delete-container h1 {
+        font-size: 2.5rem;
+        color: #e74c3c;
+        margin-bottom: 1.5rem;
+        font-weight: bold; 
+        letter-spacing: 1px; 
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: slideInFromTop 0.5s ease-in-out;
+    }
+
+/* Warning Section */
+.warning-section {
+    background-color: #ffe6e6; 
+    border-left: 5px solid #e74c3c; 
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+.warning-text {
+    font-size: 1.7rem; 
+    letter-spacing: 1px;
+    color: #c0392b; 
+    font-weight: bold;
+}
+
+.sub-warning-text {
+    font-size: 1.3rem; 
+    font-weight: bold;
+    color: #333; 
+    margin-top: 0.5rem; 
+}
+
+/* Category Details */
+.category-details {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+    .category-details h4 {
+        font-size: 1.8rem;
+        color: #2c3e50;
+        text-align: center;
+        font-weight: bold;
+    }
+
+.category-name {
+    font-size: 1.3rem;
+    color: #34495e;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    display: inline-block;
+    overflow-wrap: anywhere
+}
+
+.category-details hr {
+    border-color: #ccc;
+    margin-top: 1.5rem;
+}
+
+/* Action Buttons */
+.action-buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-delete {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold; 
+    text-transform: uppercase; 
+}
+
+    .btn-delete:hover {
+        background: linear-gradient(135deg, #c0392b, #e74c3c);
+        transform: translateY(-2px);
+    }
+
+.btn-cancel {
+    background: linear-gradient(135deg, #bdc3c7, #95a5a6);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: auto;
+}
+
+    .btn-cancel:hover {
+        background: linear-gradient(135deg, #95a5a6, #bdc3c7); 
+        transform: translateY(-2px); 
+        color: white;
+    }
+
+/* Trashcan Icon and Animation */
+.trash-icon {
+    display: inline-block;
+    margin-left: 10px;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: visibility 0s, transform 0.3s;
+}
+
+.btn-delete:hover + .trash-icon {
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.trash {
+    width: 30px;
+    height: 30px;
+    fill: none;
+}
+
+.trash-lid rect {
+    fill: #e74c3c;
+}
+
+.trash-body rect {
+    fill: #ecf0f1;
+    stroke: #bdc3c7;
+    stroke-width: 1;
+}
+
+.trash-handle path {
+    fill: #e74c3c;
+}
+
+/* Enhanced Animation for Trashcan Lid */
+.trash-lid {
+    transform-origin: 16px 3px; 
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-delete:hover ~ .trash-icon .trash-lid {
+    transform: rotate(30deg); 
+}
+
+/* Keyframe Animation for Smooth Lid Movement */
+@keyframes openLid {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(30deg);
+    }
+}
+
+.trash-lid {
+    animation: openLid 0.6s ease-in-out forwards;
+}
+
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .delete-container {
+        padding: 1rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .btn-delete {
+        margin-bottom: 1rem; 
+    }
+
+    .btn-cancel {
+        margin: auto;
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0; 
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1; 
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0; 
+        transform: translateY(50px); 
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; 
+    }
+
+    to {
+        opacity: 1; 
+    }
+}

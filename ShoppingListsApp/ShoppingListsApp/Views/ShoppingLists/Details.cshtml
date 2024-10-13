@@ -1,0 +1,189 @@
+﻿@model ShoppingListApp.Models.ShoppingListModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/ShoppingListsCSS/ShoppingListDetails.css" />
+}
+
+<div class="shopping-list-details">
+    <h1>@Model.Name</h1>
+    <div class="shopping-list-info">
+        <hr />
+        <form>
+            <!-- Hidden input to send ShoppingListId -->
+            <input type="hidden" name="id" value="@Model.ShoppingListId" />
+
+            <dl class="row">
+                <dt class="col-sm-2">Products</dt>
+                <dd class="col-sm-10">
+                    <ul>
+                        @for (int i = 0; i < Model.Items.Count; i++)
+                        {
+                            var item = Model.Items[i];
+                            var isAcquired = item.StartsWith("__ACQUIRED__");
+                            var displayItem = isAcquired ? item.Substring("__ACQUIRED__".Length) : item;
+
+                            <li class="shopping-list-item @(isAcquired ? "acquired" : "")" id="item-@i">
+                                <input type="checkbox"
+                                       name="AcquiredItems"
+                                       value="@displayItem"
+                                @(isAcquired ? "checked" : "")
+                                       onchange="updateAcquiredStatus('@Model.ShoppingListId', '@displayItem', this.checked)" />
+                                @displayItem
+                                <button type="button" onclick="deleteItem('@Model.ShoppingListId', '@displayItem')" class="btn btn-danger btn-sm">X</button>
+                            </li>
+
+                        }
+                    </ul>
+                </dd>
+            </dl>
+        </form>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.ShoppingListId" class="edit-link">Edit</a> 
+        <a asp-action="Index" class="back-link">Back to List</a>
+    </div>
+</div>
+
+
+
+
+
+@section Scripts {
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        function updateAcquiredStatus(shoppingListId, itemName, isAcquired) {
+            $.ajax({
+                url: '/ShoppingLists/UpdateAcquiredStatus',
+                type: 'POST',
+                data: {
+                    id: shoppingListId,
+                    item: itemName,
+                    isAcquired: isAcquired
+                },
+                headers: {
+                    'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                },
+                success: function() {
+                    console.log('Item updated successfully.');
+                },
+                error: function() {
+                    console.error('Error updating item.');
+                }
+            });
+        }
+
+        function deleteItem(shoppingListId, itemName) {
+            $.ajax({
+                url: '/ShoppingLists/DeleteItemDetails',
+                type: 'POST',
+                data: {
+                    id: shoppingListId,
+                    item: itemName
+                },
+                headers: {
+                    'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                },
+                success: function() {
+                    location.reload();  // Reload the page to reflect the deletion
+                },
+                error: function() {
+                    console.error('Error deleting item.');
+                }
+            });
+        }
+    </script>
+}
+
+
+
+@* @model ShoppingListApp.Models.ShoppingListModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ShoppingListModel</h4>
+    <hr />
+    <dl class="row">
+         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Items)
+        </dt>
+        <dd class = "col-sm-10">
+           @*  @Html.DisplayFor(model => model.Items)
+            <ul>
+                @foreach (var item in Model.Items)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ShoppingListId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+ *@
+
+
+@* <div class="shopping-list">
+    <h1>@Model.Name</h1>
+    <hr />
+    <form>
+        <!-- Hidden input to send ShoppingListId -->
+        <input type="hidden" name="id" value="@Model.ShoppingListId" />
+
+        <dl class="row">
+            <dt class="col-sm-2">
+                Products
+            </dt>
+            <dd class="col-sm-10">
+                <ul>
+                    @for (int i = 0; i < Model.Items.Count; i++)
+                    {
+                        var item = Model.Items[i];
+                        var isAcquired = item.StartsWith("__ACQUIRED__");
+                        var displayItem = isAcquired ? item.Substring("__ACQUIRED__".Length) : item;
+
+                        <li class="shopping-list-item @(isAcquired ? "acquired" : "")" id="item-@i">
+                            <!-- Checkbox for acquired items, with AJAX trigger -->
+                            <input type="checkbox"
+                                   name="AcquiredItems"
+                                   value="@displayItem"
+                            @(isAcquired ? "checked" : "")
+                                   onchange="updateAcquiredStatus('@Model.ShoppingListId', '@displayItem', this.checked, '@i')" />
+                            <span>@displayItem</span>
+
+                            <!-- X button to remove item with AJAX -->
+                            <button type="button" onclick="deleteItem('@Model.ShoppingListId', '@displayItem')" class="btn btn-danger btn-sm">X</button>
+                        </li>
+                    }
+                </ul>
+            </dd>
+        </dl>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ShoppingListId" class="edit-link">Edit</a> |
+    <a asp-action="Index" class="back-link">Back to List</a>
+</div>*@

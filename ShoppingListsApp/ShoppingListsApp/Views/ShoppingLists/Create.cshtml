@@ -1,0 +1,142 @@
+﻿@model ShoppingListApp.Models.ShoppingListModel
+
+@{
+    ViewData["Title"] = "Create";
+    var categories = ViewBag.Categories as List<ShoppingListApp.Models.Category>;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/ShoppingListsCSS/ShoppingListCreate.css" />
+}
+
+<div class="create-shopping-list-container">
+    <h1>Create Shopping List</h1>
+    <hr />
+
+    <div class="form-section">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="display: none;">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="animated-input" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="animated-input" placeholder="Enter list name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display: none;">
+                <label asp-for="Items" class="control-label"></label>
+                <input asp-for="Items" class="animated-input" />
+                <span asp-validation-for="Items" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <h4 class="select-products-title">Select Products</h4>
+                <div class="product-selection">
+                    @foreach (var category in categories)
+                    {
+                        <div class="category">
+                            <h5 class="category-title" onclick="toggleProducts('@category.CategoryId')">
+                                @category.Name
+                                <span class="toggle-arrow">&#x25BC;</span>
+                            </h5>
+                            <ul id="products-@category.CategoryId" class="product-list" style="display: none;">
+                                @if (category.Products.Any())
+                                {
+                                    @foreach (var product in category.Products)
+                                    {
+                                        <li>
+                                            <input type="checkbox" name="selectedProducts" value="@product.ProductId" />
+                                            @product.Name
+                                        </li>
+                                    }
+                                }
+                                else
+                                {
+                                    <li>No products in this category.</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn-create" />
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn-back">Back to List</a>
+    </div>
+</div>
+
+
+@* 
+<h1>Create Shopping List</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="display: none">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none;">
+                <label asp-for="Items" class="control-label"></label>
+                <input asp-for="Items" class="form-control" />
+                <span asp-validation-for="Items" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <h4>Select Products</h4>
+                @foreach (var category in categories)
+                {
+                    <h5>@category.Name</h5>
+                    <ul>
+                        @foreach (var product in category.Products)
+                        {
+                            <li>
+                                <input type="checkbox" name="selectedProducts" value="@product.ProductId" />
+                                @product.Name
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+ *@
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+          function toggleProducts(categoryId) {
+            const productList = document.getElementById(`products-${categoryId}`);
+            const categoryTitle = event.currentTarget;
+            productList.style.display = productList.style.display === 'none' ? 'block' : 'none';
+            categoryTitle.classList.toggle('expanded');
+        }
+       
+    </script>
+}

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ShoppingListApp.Models.ShoppingListModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/ShoppingListsCSS/ShoppingListIndex.css" />
+}
+
+@* <h1>Shopping Lists</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @* <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.Items)
+            </th> 
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @* <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td> 
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            @* <td>
+                @Html.DisplayFor(modelItem => item.Items)
+            </td> 
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ShoppingListId">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.ShoppingListId">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.ShoppingListId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@
+
+<div class="shopping-list-index">
+    <h1>Shopping Lists</h1>
+
+    <p class="create-new">
+        <a asp-action="Create">Create New</a>
+    </p>
+
+    <div class="shopping-list-grid">
+        @foreach (var item in Model)
+        {
+            <div class="shopping-list-card">
+                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                <div class="shopping-list-actions">
+                    <a class="btn-edit" asp-action="Edit" asp-route-id="@item.ShoppingListId">Edit</a>
+                    <a class="btn-details" asp-action="Details" asp-route-id="@item.ShoppingListId">Details</a>
+                    <a class="btn-delete" asp-action="Delete" asp-route-id="@item.ShoppingListId">Delete</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

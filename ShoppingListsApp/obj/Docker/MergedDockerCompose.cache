@@ -1,0 +1,59 @@
+name: dockercompose8809356676389381656
+services:
+  shoplistdb:
+    container_name: ShopDbCont
+    environment:
+      POSTGRES_DB: ShoppingListDatabase
+      POSTGRES_PASSWORD: azsxdc
+      POSTGRES_USER: person
+    image: postgres:16
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5432
+        published: "5432"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Mirena\Desktop\PROETKA\ShoppingListsApp\containers\products
+        target: /var/lib/postgresql/data
+        bind:
+          create_host_path: true
+  shoppinglistsapp:
+    build:
+      context: C:\Users\Mirena\Desktop\PROETKA\ShoppingListsApp
+      dockerfile: ShoppingListsApp/Dockerfile
+    container_name: ShopppingListCont
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "10024"
+      ASPNETCORE_HTTPS_PORTS: "10025"
+    image: shoppinglistsapp
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 10024
+        published: "10024"
+        protocol: tcp
+      - mode: ingress
+        target: 10025
+        published: "10025"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Mirena\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Mirena\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose8809356676389381656_default

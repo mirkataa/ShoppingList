@@ -1,0 +1,38 @@
+﻿@model ShoppingListApp.Models.Category
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section Styles {
+    <!-- Link to HomePage specific CSS -->
+    <link rel="stylesheet" href="~/css/CategoriesCSS/CategoryCreate.css" />
+}
+
+<div class="create-container">
+    <h1>Create Category</h1>
+    <div class="form-section">
+        <h4>Category Information</h4>
+        <hr />
+        @* <div class="col-md-4"> *@
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control animated-input" placeholder="Enter category name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                <input type="submit" value="Create" class="btn-create animated-button" />
+                </div>
+            </form>
+        </div>
+
+    <div class="back-link">
+        <a asp-action="Index" class="btn-back animated-button">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

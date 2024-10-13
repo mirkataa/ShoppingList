@@ -1,0 +1,150 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{37ADB1AE-FEBD-4C24-9A1F-982F3C782372}|docker-compose.dcproj|c:\\users\\mirena\\desktop\\proetka\\shoppinglistsapp\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{37ADB1AE-FEBD-4C24-9A1F-982F3C782372}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A675479B-81DC-42A2-ABC6-C6BB84DF6A8B}|ShoppingListsApp\\ShoppingListsApp.csproj|c:\\users\\mirena\\desktop\\proetka\\shoppinglistsapp\\shoppinglistsapp\\models\\shoppinglistmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A675479B-81DC-42A2-ABC6-C6BB84DF6A8B}|ShoppingListsApp\\ShoppingListsApp.csproj|solutionrelative:shoppinglistsapp\\models\\shoppinglistmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A675479B-81DC-42A2-ABC6-C6BB84DF6A8B}|ShoppingListsApp\\ShoppingListsApp.csproj|c:\\users\\mirena\\desktop\\proetka\\shoppinglistsapp\\shoppinglistsapp\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A675479B-81DC-42A2-ABC6-C6BB84DF6A8B}|ShoppingListsApp\\ShoppingListsApp.csproj|solutionrelative:shoppinglistsapp\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A675479B-81DC-42A2-ABC6-C6BB84DF6A8B}|ShoppingListsApp\\ShoppingListsApp.csproj|c:\\users\\mirena\\desktop\\proetka\\shoppinglistsapp\\shoppinglistsapp\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A675479B-81DC-42A2-ABC6-C6BB84DF6A8B}|ShoppingListsApp\\ShoppingListsApp.csproj|solutionrelative:shoppinglistsapp\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A675479B-81DC-42A2-ABC6-C6BB84DF6A8B}|ShoppingListsApp\\ShoppingListsApp.csproj|c:\\users\\mirena\\desktop\\proetka\\shoppinglistsapp\\shoppinglistsapp\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A675479B-81DC-42A2-ABC6-C6BB84DF6A8B}|ShoppingListsApp\\ShoppingListsApp.csproj|solutionrelative:shoppinglistsapp\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A675479B-81DC-42A2-ABC6-C6BB84DF6A8B}|ShoppingListsApp\\ShoppingListsApp.csproj|c:\\users\\mirena\\desktop\\proetka\\shoppinglistsapp\\shoppinglistsapp\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A675479B-81DC-42A2-ABC6-C6BB84DF6A8B}|ShoppingListsApp\\ShoppingListsApp.csproj|solutionrelative:shoppinglistsapp\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A675479B-81DC-42A2-ABC6-C6BB84DF6A8B}|ShoppingListsApp\\ShoppingListsApp.csproj|c:\\users\\mirena\\desktop\\proetka\\shoppinglistsapp\\shoppinglistsapp\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A675479B-81DC-42A2-ABC6-C6BB84DF6A8B}|ShoppingListsApp\\ShoppingListsApp.csproj|solutionrelative:shoppinglistsapp\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A675479B-81DC-42A2-ABC6-C6BB84DF6A8B}|ShoppingListsApp\\ShoppingListsApp.csproj|c:\\users\\mirena\\desktop\\proetka\\shoppinglistsapp\\shoppinglistsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A675479B-81DC-42A2-ABC6-C6BB84DF6A8B}|ShoppingListsApp\\ShoppingListsApp.csproj|solutionrelative:shoppinglistsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2024-10-13T14:46:22.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\ShoppingListsApp\\Program.cs",
+              "RelativeDocumentMoniker": "ShoppingListsApp\\Program.cs",
+              "ToolTip": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\ShoppingListsApp\\Program.cs",
+              "RelativeToolTip": "ShoppingListsApp\\Program.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAADcAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T10:59:07.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShoppingListModel.cs",
+              "DocumentMoniker": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\ShoppingListsApp\\Models\\ShoppingListModel.cs",
+              "RelativeDocumentMoniker": "ShoppingListsApp\\Models\\ShoppingListModel.cs",
+              "ToolTip": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\ShoppingListsApp\\Models\\ShoppingListModel.cs",
+              "RelativeToolTip": "ShoppingListsApp\\Models\\ShoppingListModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T10:56:34.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\ShoppingListsApp\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "ShoppingListsApp\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\ShoppingListsApp\\Models\\Product.cs",
+              "RelativeToolTip": "ShoppingListsApp\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T10:55:30.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\ShoppingListsApp\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "ShoppingListsApp\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\ShoppingListsApp\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "ShoppingListsApp\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T10:54:38.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\ShoppingListsApp\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "ShoppingListsApp\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\ShoppingListsApp\\Models\\Category.cs",
+              "RelativeToolTip": "ShoppingListsApp\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T10:52:47.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\ShoppingListsApp\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ShoppingListsApp\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\ShoppingListsApp\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ShoppingListsApp\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAcwCYAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T10:49:22.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\ShoppingListsApp\\Data\\SeedData.cs",
+              "RelativeDocumentMoniker": "ShoppingListsApp\\Data\\SeedData.cs",
+              "ToolTip": "C:\\Users\\Mirena\\Desktop\\PROETKA\\ShoppingListsApp\\ShoppingListsApp\\Data\\SeedData.cs",
+              "RelativeToolTip": "ShoppingListsApp\\Data\\SeedData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T10:31:13.884Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
