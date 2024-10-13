@@ -17,6 +17,8 @@ services:
         - POSTGRES_USER=person
         - POSTGRES_PASSWORD=azsxdc
     volumes: 
-        - ./containers/products:/var/lib/postgresql/data
+        - pgdata:/var/lib/postgresql/data
     ports: 
         - 5432:5432
+volumes:
+  pgdata:
