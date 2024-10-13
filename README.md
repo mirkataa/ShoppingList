@@ -1,11 +1,9 @@
 # Shopping List Application
 
 ## Overview
-
 The Shopping List Application is a web-based platform that allows users to manage their shopping lists efficiently. Users can create, view, edit, and delete their individual shopping lists, while categories and products are shared among all users. The application is built using ASP.NET Core MVC, Entity Framework Core, and PostgreSQL, and is containerized using Docker.
 
 ## Features
-
 - **User Registration and Authentication**: Users can register for an account and log in to access their shopping lists.
 - **Role Management**: Admin users can create and manage categories and products, while regular users can only view these items.
 - **CRUD Operations**:
@@ -16,7 +14,6 @@ The Shopping List Application is a web-based platform that allows users to manag
 - **Docker Support**: Fully containerized application with Docker and Docker Compose.
 
 ## Technologies Used
-
 - **.NET 8**: The project is developed using  .NET 8 and Entity Framework (Visual Studio 2022).
 - **Entity Framework Core**: ORM for interacting with the PostgreSQL database.
 - **MVC (Model-View-Controller) Architecture**: Utilizes the MVC pattern for structuring the application.
@@ -24,24 +21,19 @@ The Shopping List Application is a web-based platform that allows users to manag
 - **Docker**: Containerization platform to package and run the application.
 - **JavaScript**: Used for frontend interactivity.
 - **HTML** and **CSS**: Used for better user experience.
-- 
+  
 ## Setup Instructions
-
 ### Prerequisites
-
 - [.NET SDK](https://dotnet.microsoft.com/download) (version 8 or later)
 - [Docker](https://www.docker.com/get-started)
 
 ### Run
-
 - Clone the repository.
 - Open the project in a .NET IDE.
 - Run Docker Compose to start the web application.
   
 ### Usage
-
 - User Registration: Click Register to create a new account.
-
 - Log In: Use your registered credentials to log in.
 - Admin Credentials (There is only one admin):
 ```bash
