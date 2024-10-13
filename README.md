@@ -12,16 +12,19 @@ The Shopping List Application is a web-based platform that allows users to manag
   - Create, read (+ see the products contained in the category), update (+ move products between categories), and delete categories.
   - Create, read, update, and delete products.
   - Manage personal shopping lists, including marking items as purchased.
-- **Data Persistence**: Utilizes PostgreSQL for data storage with Entity Framework Core for ORM.
+- **Data Persistence**: Utilizes PostgreSQL for data storage with Entity Framework Core for ORM, following a Code First approach.
 - **Docker Support**: Fully containerized application with Docker and Docker Compose.
 
 ## Technologies Used
 
-- **ASP.NET Core 8**: Framework for building the web application.
+- **.NET 8**: The project is developed using  .NET 8 and Entity Framework (Visual Studio 2022).
 - **Entity Framework Core**: ORM for interacting with the PostgreSQL database.
+- **MVC (Model-View-Controller) Architecture**: Utilizes the MVC pattern for structuring the application.
 - **PostgreSQL**: Relational database management system for data storage.
 - **Docker**: Containerization platform to package and run the application.
-
+- **JavaScript**: Used for frontend interactivity.
+- **HTML** and **CSS**: Used for better user experience.
+- 
 ## Setup Instructions
 
 ### Prerequisites
@@ -47,3 +50,6 @@ The Shopping List Application is a web-based platform that allows users to manag
 ```
 - Manage Categories and Products: Only Admins can create, edit or delete categories and products. Regular users can only view them.
 - Shopping Lists: Create and manage your personal shopping lists. You can add items, mark them as purchased, and delete lists as needed.
+
+## Contributors
+- Mirena Koleva
